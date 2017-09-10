@@ -6,9 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
   </head>
 
   <body>
+    <h1>Photogram</h1>
+    <div class="navigation">
+      <ul>
+        <li><%= link_to 'Photos', photos_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Welcome,' + current_user.email %></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Register', new_user_registration_path %></li>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+        <% end %>
+        <li><%= link_to 'Post new photo', new_photo_path %></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

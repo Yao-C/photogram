@@ -2,14 +2,16 @@
 
 <h1>Photos</h1>
 
-<% @photos.each do |photo| %>
-  <%= image_tag photo.url, style: 'max-width:500px' %>
-  <%= photo.caption %>
-  <%= photo.user %>
-  <%= link_to 'Show', photo %>
-  <%= link_to 'Edit', edit_photo_path(photo) %>
-  <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<center>
+  <% @photos.each do |photo| %>
+  <div class="photo-box">
+    <%= image_tag photo.url, style: 'max-width:500px' %>
+    <h4><%= photo.caption %></h4>
+    <h4>Posted by <%= photo.user.email %></h4>
+  </div>
+ <% end %>
+</center>
+
 
 <br>
 
