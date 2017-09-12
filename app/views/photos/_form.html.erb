@@ -11,10 +11,17 @@
     </div>
   <% end %>
 
+  <!--<div class="field">-->
+  <!--  <%= form.label :url %>-->
+  <!--  <%= form.text_field :url, id: :photo_url %>-->
+  <!--</div>-->
+  
   <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :photo_url %>
+    <h3>Choose or take a photo</h3>
+    <%= form.file_field :image, id: "file-input" %>
+    
   </div>
+
 
   <div class="field">
     <%= form.label :caption %>

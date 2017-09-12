@@ -5,7 +5,7 @@
 <center>
   <% @photos.each do |photo| %>
   <div class="photo-box">
-    <%= image_tag photo.url, style: 'max-width:500px' %>
+    <%= image_tag photo.image(:large) if photo.image %>
     <h4><%= photo.caption %></h4>
     <h4>Posted by <%= photo.user.email %></h4>
   </div>
