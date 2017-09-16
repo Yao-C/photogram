@@ -2,17 +2,15 @@
 
 <h1>Photos</h1>
 
+<div 
+
+
 <center>
-  <% @photos.each do |photo| %>
-  <div class="photo-box">
-    <%= image_tag photo.image(:large) if photo.image %>
-    <h4><%= photo.caption %></h4>
-    <h4>Posted by <%= photo.user.email %></h4>
+<% @photos.each do |photo| %>
+  <div class="jumbotron" style="max-width: 500px">
+    <div class="container">
+      <%= image_tag photo.image(:large), class: 'img-responsive' %>
+    </div>
   </div>
- <% end %>
+<% end %>
 </center>
-
-
-<br>
-
-<%= link_to 'New Photo', new_photo_path %>

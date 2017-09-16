@@ -32,6 +32,10 @@ gem "figaro"
 gem 'paperclip'
 gem 'aws-sdk','~> 2.3'
 
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,7 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do
